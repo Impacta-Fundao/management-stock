@@ -1,5 +1,8 @@
-import Seller from "./Seller/page";
+"use client";
 
-export default function SellerMain(){
-    return <Seller/>
+import SellerPage from "@/ui/seller";
+
+export default function SellerMain() {
+return <SellerPage/>
 }
+

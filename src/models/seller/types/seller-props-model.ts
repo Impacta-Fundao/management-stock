@@ -22,6 +22,4 @@ export interface FormDataSeller {
   errors: FieldErrors<SellerPropsModel>;
 }
 
-export interface SellerViewProps{
 
-}
