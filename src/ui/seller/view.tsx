@@ -8,7 +8,7 @@ import {
 } from "react-hook-form";
 import { SellerPropsModel } from "../../models/seller/types/seller-props-model";
 import { BaseSyntheticEvent, useState } from "react";
-import { Building2, Mail, Phone } from "lucide-react";
+import { Building2, Edit, Mail, Phone, Trash } from "lucide-react";
 
 export interface SellerViewProps {
   seller: SellerPropsModel[];
@@ -242,7 +242,6 @@ export default function SellerView({
                   <div>
                     <h3 className="font-semibold text-lg">{s.nome}</h3>
                     <p className="text-gray-600 flex p-2">
-                      {" "}
                       <Mail />
                       {s.email}
                     </p>
@@ -268,7 +267,7 @@ export default function SellerView({
                       onClick={() => s.id && handleEdit(s.id)}
                       className="bg-yellow-500 text-white px-3 py-1 rounded text-sm"
                     >
-                      ✏️ Editar
+                    <Edit/> Editar
                     </button>
 
                     <button
@@ -282,7 +281,7 @@ export default function SellerView({
                       }}
                       className="bg-red-500 text-white px-3 py-1 rounded text-sm"
                     >
-                      🗑️ Deletar
+                      <Trash className="w-[50px]" /> Deletar
                     </button>
                   </div>
                 </div>
@@ -334,7 +333,8 @@ export default function SellerView({
                 </div>
                 <div>
                   <label>CNPJ</label>
-                  <input maxLength={14}
+                  <input
+                    maxLength={14}
                     {...register("cnpj", { maxLength: 14 })}
                     className="w-full p-2 border rounded"
                   />
